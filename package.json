@@ -1,33 +1,52 @@
 {
+  "name": "plugin",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "husky install",
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint \"**/*.{vue,ts,js}\"",
-    "lint:fix": "eslint \"**/*.{vue,ts,js}\" --fix"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build:lib": "vue-cli-service build --target lib --name picture-view --dest lib  src/plugin/picture-view/index.js"
   },
   "dependencies": {
-    "@vue/composition-api": "^1.6.1",
-    "@vueuse/core": "^8.5.0",
-    "core-js": "^3.21.1",
-    "vue": "^2.6.14",
-    "vue-router": "^3.5.3"
+    "@deck.gl/core": "^8.7.12",
+    "@deck.gl/layers": "^8.7.12",
+    "core-js": "^3.8.3",
+    "vue": "^2.6.14"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.18.8",
-    "@iconify/json": "^2.1.14",
-    "@vue/runtime-dom": "^3.2.31",
-    "eslint": "^8.10.0",
-    "husky": "^7.0.4",
-    "typescript": "^4.6.2",
-    "unplugin-auto-import": "^0.6.4",
-    "unplugin-icons": "^0.13.3",
-    "unplugin-vue-components": "^0.18.0",
-    "unplugin-vue2-script-setup": "^0.10.0",
-    "vite": "^2.8.6",
-    "vite-plugin-vue2": "^1.9.3",
-    "vite-plugin-windicss": "^1.8.3",
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "less": "^4.0.0",
+    "less-loader": "^8.0.0",
+    "prettier": "^2.4.1",
     "vue-template-compiler": "^2.6.14"
-  }
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
