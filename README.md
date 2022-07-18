@@ -1,4 +1,4 @@
-# plugin
+# deck-gl
 
 ## Project setup
 ```
